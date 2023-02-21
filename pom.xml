@@ -11,6 +11,7 @@
     <modules>
         <module>HW</module>
         <module>CW</module>
+        <module>TEST</module>
     </modules>
 
     <properties>

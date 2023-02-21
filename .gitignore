@@ -1,4 +1,5 @@
-CW
+/CW
+/TEST
 .idea
 **/*.iml
 **/target/
