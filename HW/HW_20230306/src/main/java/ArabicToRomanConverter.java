@@ -50,22 +50,18 @@ public class ArabicToRomanConverter {
             throw new IllegalArgumentException("No negative number or zero allowed");
         }
 
-        // Пока число положительное, отнимем от него что-нибудь
-        while (number > 0L) {
-            // Идем по числам, начиная с самого большого
-            // У нас пары Римская (ключ) -> Арабская (значение)
-            for (Map.Entry<String, Long> entry : MAPPING.entrySet()) {
-                // Сохраним значение, чтобы дважды не делать entry.getValue()
-                long value = entry.getValue();
+        // Идем по числам, начиная с самого большого
+        // У нас пары Римская (ключ) -> Арабская (значение)
+        for (Map.Entry<String, Long> entry : MAPPING.entrySet()) {
+            // Сохраним значение, чтобы дважды не делать entry.getValue()
+            long value = entry.getValue();
 
-                // Если мы можем отнять очередное арабское число от нашего, делаем это (добавляя римскую цифру),
-                // и переходим к следующей итерации while
-                if (number >= value) {
-                    builder.append(entry.getKey());
-                    number -= value;
+            // Если мы можем отнять текущее арабское число от нашего, делаем это (добавляя римскую цифру),
+            // и делаем это до тех пор, пока можем его отнять
+            while (number >= value) {
+                number -= value;
 
-                    break;
-                }
+                builder.append(entry.getKey());
             }
         }
 
