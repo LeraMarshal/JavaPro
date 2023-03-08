@@ -9,6 +9,8 @@ public class ArabicToRomanConverter {
         // ctrl+cmd+space u+0305 -- overline
         // https://www.compart.com/en/unicode/U+0305
         // добавляем сначала букву, потом добавляем символ overline
+        // есть еще double overline - u+033f
+
         MAPPING.put("M̅", 1000000L);
         MAPPING.put("C̅M̅", 900000L);
         MAPPING.put("D̅", 500000L);
