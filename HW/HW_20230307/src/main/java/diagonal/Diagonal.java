@@ -27,7 +27,7 @@ public class Diagonal {
     public static int[][] diagonalMatrixFill(int rowCount, int columnCount) {
         int[][] points = new int[rowCount][columnCount];
 
-        int filled = 0;
+        int filled = 0; // счетчик заполненных точек
         while (filled != rowCount * columnCount) {
             // Пока не заполним весь массив, будем пробовать заполнять по диагоналям, начиная со случайного элемента
 
@@ -43,7 +43,7 @@ public class Diagonal {
     // Рекурсивный вариант
     // Возвращаем количество заполненных точек
     private static int diagonalMatrixFillRec(int rowCount, int columnCount, int[][] points, int row, int column, Direction direction, int value) {
-        int filled = 0;
+        int filled = 0; // количество заполненных этим вызовом точек
 
         // Если значения на точке нет -- записываем его
         if (points[row][column] == 0) {
@@ -108,8 +108,8 @@ public class Diagonal {
     // Нерекурсивный вариант
     // Возвращаем количество заполненных точек
     private static int diagonalMatrixFillNonRec(int rowCount, int columnCount, int[][] points, int row, int column, Direction direction, int value) {
-        boolean finished = false;
-        int filled = 0;
+        boolean finished = false; // Флаг остановки цикла и выходи из функции в случае, если некуда больше идти
+        int filled = 0; // счетчик заполненных точек
 
         while (!finished) {
             // Если значения на точке нет -- записываем его
