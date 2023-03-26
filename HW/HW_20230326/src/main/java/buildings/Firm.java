@@ -29,15 +29,17 @@ public class Firm implements Runnable{
     @Override
     public void run() {
         try {
+            // Бесконечным циклом наполняем очередь на постройку домов
             while (!Thread.currentThread().isInterrupted()) {
                 int phase = phaser.getPhase();
 
                 for (int i = 0; i < phaser.getRegisteredParties(); i++) {
                     queue.put(phase + "-" + i);
                 }
-
+                // Ожидаем смены фазы
                 phaser.awaitAdvance(phase);
 
+                // Собираем с бригад суммарное число затраченных ими ресурсов
                 int sumResources = brigades.stream().mapToInt(Brigade::getResources).sum();
 
                 System.out.println("Finished building village " + phase + ". Used resources: " + sumResources);

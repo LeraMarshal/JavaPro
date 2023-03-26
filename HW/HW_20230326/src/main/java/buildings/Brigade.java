@@ -18,6 +18,7 @@ public class Brigade implements Runnable {
 
     @Override
     public void run() {
+        // В бесконечном цикле берем задачу на постройку дома
         int lastPhase = 0;
         try {
             while (!Thread.currentThread().isInterrupted()) {
@@ -26,6 +27,7 @@ public class Brigade implements Runnable {
                 System.out.println(Thread.currentThread().getName() + " is building " + task);
                 Thread.sleep(duration);
 
+                // Приходим в фазер, чтобы отчитаться о выполненной задаче
                 int nextPhase = phaser.arrive();
                 if (nextPhase != lastPhase) {
                     resources = 0;
