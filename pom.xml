@@ -12,6 +12,9 @@
         <module>HW</module>
         <module>CW</module>
         <module>TEST</module>
+        <module>TEST/TEST_20230401</module>
+        <module>CW/CW_20230406tasks</module>
+        <module>CW/CW_20230420alg</module>
     </modules>
 
     <properties>
