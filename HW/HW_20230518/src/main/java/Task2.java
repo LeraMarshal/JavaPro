@@ -30,7 +30,6 @@ public class Task2 {
 
     // Отсортировать массив по возрастанию
     public static void sortAsc(int[] arr) {
-        int tmp = 0;
         int len = arr.length;
 
 //        for (int i = 0; i < len - 1; i++) {
@@ -43,10 +42,10 @@ public class Task2 {
 //            }
 //        }
 
-        for (int i = 0; i < len; i++) {
-            for (int j = 0; j < len; j++) {
+        for (int i = 1; i < len; i++) {
+            for (int j = 0; j < i; j++) {
                 if (arr[i] < arr[j]) {
-                    tmp = arr[i];
+                    int tmp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = tmp;
                 }
