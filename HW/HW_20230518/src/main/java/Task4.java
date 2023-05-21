@@ -72,7 +72,7 @@ public class Task4 {
         }
 
         return res;
-        
+
 //        return Arrays.stream(arr).sorted().limit(2).toArray();
     }
 }
