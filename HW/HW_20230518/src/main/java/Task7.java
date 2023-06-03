@@ -43,8 +43,11 @@ public class Task7 {
 
         visited[row][column] = true;
 
+        // Если вверху есть точка И ее стоимость не определена ИЛИ ее стоимость больше стоимости прохода через текущую точку
         if (row - 1 >= 0 && (costs[row - 1][column] == -1 || costs[row][column] + grid[row - 1][column] < costs[row - 1][column])) {
+            // стоимость в текущей точке + стоимость пути вверх
             costs[row - 1][column] = costs[row][column] + grid[row - 1][column];
+            //  т.к. нужно пересчитать теперь стоимости соседей данной точки
             visited[row - 1][column] = false;
         }
 
@@ -88,6 +91,7 @@ public class Task7 {
             minCost = rightCost;
         }
 
+        // если все стоимости вокруг (соседи) >= текущей -> достигли начальной точки
         if (minCost >= currentCost) {
             System.out.printf("%d,%d\n",row,column);
             return;
