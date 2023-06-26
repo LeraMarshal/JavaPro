@@ -77,10 +77,11 @@ public class Info {
         Objects.requireNonNull(employee);
 
         employee.setSalary(employee.getSalary() * 1.25);
+        employee.setPosition(employee.getPosition().next());
 
-        switch (employee.getPosition()) {
-            case JUNIOR -> employee.setPosition(Position.MIDDLE);
-            case MIDDLE -> employee.setPosition(Position.SENIOR);
-        }
+//        switch (employee.getPosition()) {
+//            case JUNIOR -> employee.setPosition(Position.MIDDLE);
+//            case MIDDLE -> employee.setPosition(Position.SENIOR);
+//        }
     }
 }
