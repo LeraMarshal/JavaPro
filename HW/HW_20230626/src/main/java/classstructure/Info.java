@@ -84,4 +84,25 @@ public class Info {
 //            case MIDDLE -> employee.setPosition(Position.SENIOR);
 //        }
     }
+
+    // by: Evgeniy Shulimenko, modified
+    public void getPromotion2(Employee employee) {
+        Objects.requireNonNull(employee);
+
+        int indexOfPosition = -1;
+        Position currentPosition = employee.getPosition();
+
+        Position[] positions = Position.values();
+        for (int i = 0; i < positions.length; i++) {
+            if (currentPosition == positions[i]) {
+                indexOfPosition = i;
+            }
+        }
+
+        if (indexOfPosition >= 0 && indexOfPosition < positions.length - 1) {
+            employee.setPosition(positions[indexOfPosition + 1]);
+        }
+
+        employee.setSalary(employee.getSalary() * 1.25);
+    }
 }
