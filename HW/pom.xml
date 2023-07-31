@@ -30,6 +30,9 @@
         <module>HW_20230603</module>
         <module>HW_20230617</module>
         <module>HW_20230626</module>
+        <module>HW_20230629</module>
+        <module>HW_20230713</module>
+        <module>HW_20230706</module>
     </modules>
 
     <properties>
@@ -51,6 +54,11 @@
             <artifactId>mockito-core</artifactId>
             <version>4.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>0.15</version>
         </dependency>
     </dependencies>
 
