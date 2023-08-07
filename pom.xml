@@ -15,6 +15,7 @@
         <module>TEST/TEST_20230401</module>
         <module>CW/CW_20230406tasks</module>
         <module>CW/CW_20230420alg</module>
+        <module>CW/CW_20230804tasks</module>
     </modules>
 
     <properties>

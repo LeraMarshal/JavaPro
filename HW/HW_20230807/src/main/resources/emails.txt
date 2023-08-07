@@ -1,0 +1,7 @@
+aaa
+john.doe@example.com
+john.doe@example.com@abc.ru
+jane.smith@example.org
+james.bond@example.com
+jane.smith@example.org
+jane.smith@example.net
