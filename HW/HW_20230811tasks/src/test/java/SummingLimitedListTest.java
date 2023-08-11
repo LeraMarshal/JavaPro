@@ -1,36 +1,57 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class SummingLimitedListTest {
     @Test
-    void constructorTest(){
+    void constructorTest() {
         SummingLimitedList list = new SummingLimitedList(0);
-        Assertions.assertEquals(0, list.size());
-        Assertions.assertEquals(0, list.sum());
-
-        Assertions.assertThrows(IllegalArgumentException.class, () -> new SummingLimitedList(-1));
+        assertEquals(0, list.size());
+        assertEquals(0, list.sum());
     }
 
     @Test
-    void internalsTest() {
+    void constructorExceptionTest() {
+        assertThrows(IllegalArgumentException.class, () -> new SummingLimitedList(-1));
+    }
+
+    @Test
+    void addingOverLimitTest() {
         SummingLimitedList list = new SummingLimitedList(2);
 
         list.add(1); // 1
         list.add(2); // 1, 2
         list.add(3); // 1, 2
 
-        Assertions.assertEquals(2, list.size());
-        Assertions.assertEquals(3, list.sum());
+        assertEquals(2, list.size());
+        assertEquals(3, list.sum());
+    }
 
-        list.remove(-1); // 1, 2
-        list.remove(2); // 1, 2
+    @Test
+    void addingAndRemovalTest() {
+        SummingLimitedList list = new SummingLimitedList(3);
 
-        Assertions.assertEquals(2, list.size());
-        Assertions.assertEquals(3, list.sum());
+        list.add(1); // 1
+        list.add(2); // 1, 2
+        list.add(3); // 1, 2, 3
 
-        list.remove(0); // 2
+        list.remove(1); // 1, 3
 
-        Assertions.assertEquals(1, list.size());
-        Assertions.assertEquals(2, list.sum());
+        assertEquals(2, list.size());
+        assertEquals(4, list.sum());
+    }
+
+    @Test
+    void removeOutsideBoundsTest() {
+        SummingLimitedList list = new SummingLimitedList(1);
+
+        list.add(5); // 5
+
+        list.remove(-1); // 5
+        list.remove(1); // 5
+
+        assertEquals(1, list.size());
+        assertEquals(5, list.sum());
     }
 }
