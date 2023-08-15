@@ -1,0 +1,52 @@
+package de.marshal.hw20230815;
+
+public class Example {
+    /*
+    Классы:
+
+    Person:
+    String name
+    int age
+    String address
+    String email
+
+    Методы:
+    Конструктор с параметрами для инициализации полей.
+    String getSummary() - возвращает строку, содержащую информацию о человеке (имя, возраст, адрес).
+    boolean isAdult() - проверяет, является ли человек совершеннолетним (возраст >= 18).
+    void sendEmail(String message) - имитирует отправку электронной почты.
+
+    Product:
+    String name
+    double price
+    int quantity
+    String category
+
+    Методы:
+    Конструктор с параметрами для инициализации полей.
+    double getTotalPrice() - возвращает общую стоимость продукта (цена * количество).
+    boolean isAvailable() - проверяет, доступен ли продукт для заказа (количество > 0).
+    String getCategory() - возвращает категорию продукта.
+
+    Order:
+    int orderId
+    Person customer
+    List<Product> products
+    LocalDate orderDate
+
+    Методы:
+    Конструктор с параметрами для инициализации полей.
+    double calculateTotalPrice() - вычисляет общую стоимость заказа на основе продуктов.
+    int getNumberOfProducts() - возвращает количество продуктов в заказе.
+    boolean isOrderExpired() - проверяет, истекла ли дата заказа.
+
+    OrderProcessor:
+    List<Order> orders
+
+    Методы:
+    Конструктор без параметров.
+    void addOrder(Order order) - добавляет заказ в список заказов.
+    double calculateTotalRevenue() - вычисляет общую выручку от всех заказов.
+    List<Order> getExpiredOrders() - возвращает список заказов, у которых истекла дата.
+    */
+    }
