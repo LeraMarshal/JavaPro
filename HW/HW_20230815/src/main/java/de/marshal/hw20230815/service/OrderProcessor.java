@@ -1,8 +1,8 @@
 package de.marshal.hw20230815.service;
 
-import de.marshal.cw20230815.entity.Order;
-import de.marshal.cw20230815.entity.Product;
-import de.marshal.cw20230815.exceprtion.InvalidOrderException;
+import de.marshal.hw20230815.entity.Order;
+import de.marshal.hw20230815.entity.Product;
+import de.marshal.hw20230815.exceprtion.InvalidOrderException;
 
 import java.util.ArrayList;
 import java.util.List;
